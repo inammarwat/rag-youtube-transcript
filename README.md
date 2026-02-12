@@ -87,66 +87,6 @@ Final Answer
 
 ---
 
-## 📦 Installation
-
-### 1️⃣ Clone the Repository
-
-```bash
-git clone https://github.com/YOUR_USERNAME/youtube-rag-gemini.git
-cd youtube-rag-gemini
-```
-
----
-
-### 2️⃣ Create Virtual Environment (using uv)
-
-```bash
-uv venv
-.venv\Scripts\activate   # Windows
-```
-
----
-
-### 3️⃣ Install Dependencies
-
-```bash
-uv pip install -r requirements.txt
-```
-
----
-
-### 4️⃣ Add Gemini API Key
-
-Create a `.env` file in the root directory:
-
-```
-GEMINI_API_KEY=your_api_key_here
-```
-
-⚠️ Do NOT upload `.env` to GitHub.
-
----
-
-## ▶️ Running the Pipeline
-
-### Option 1 — Development Mode (Notebooks)
-
-Run notebooks in the following order:
-
-1. `01_data_ingestion.ipynb`
-2. `02_chunking_analysis.ipynb`
-3. `03_embedding_retrieval.ipynb`
-4. `04_rag_pipeline.ipynb`
-
----
-
-### Option 2 — Full Pipeline Execution
-
-```bash
-python main.py
-```
-
----
 
 ## 🧪 Example Usage
 
@@ -207,4 +147,25 @@ This project demonstrates practical understanding of:
 - Modular pipeline design
 
 It can be extended into research on:
-- Ag
+- Agentic AI systems  
+- Educational assistants  
+- Multimodal RAG  
+- Domain-specific knowledge systems  
+
+---
+
+## 👤 Author
+
+**Inam Ullah Khan**  
+MSc Data Science  
+Al-Farabi Kazakh National University  
+
+Research Interests:
+- Retrieval-Augmented Generation
+- Agentic AI Systems
+- Generative AI
+- Applied NLP
+
+---
+
+⭐ If you found this project useful, consider giving it a star!
