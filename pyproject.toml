@@ -1,0 +1,22 @@
+[project]
+name = "langchain-transcript-qa"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "faiss-cpu>=1.13.2",
+    "ipykernel>=7.2.0",
+    "langchain>=1.2.10",
+    "langchain-community>=0.4.1",
+    "langchain-core>=1.2.11",
+    "langchain-google-genai>=4.2.0",
+    "langchain-groq>=1.1.2",
+    "langchain-huggingface>=1.2.0",
+    "langchain-text-splitters>=1.1.0",
+    "pypdf>=6.7.0",
+    "python-dotenv>=1.2.1",
+    "sentence-transformers>=5.2.2",
+    "tiktoken>=0.12.0",
+    "youtube-transcript-api>=1.2.4",
+]
