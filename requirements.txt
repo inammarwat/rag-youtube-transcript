@@ -5,6 +5,7 @@ langchain-core
 langchain-text-splitters
 python-dotenv
 ipykernel
+ipywidgets
 
 # LLM Provider Integrations
 langchain-groq
