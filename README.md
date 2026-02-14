@@ -1,72 +1,48 @@
-# 🎥 YouTube RAG Pipeline with Gemini
+# NeuralTranscript  
+## A RAG-Based Semantic Search & Q&A System for YouTube Content
 
-A modular **Retrieval-Augmented Generation (RAG)** system that ingests YouTube video transcripts, performs semantic chunking and embedding, and enables question answering using **Google Gemini**.
+NeuralTranscript is an end-to-end Retrieval-Augmented Generation (RAG) system designed to perform semantic search and context-aware question answering over long-form YouTube transcripts.
 
-This project demonstrates a complete end-to-end LLM pipeline including:
+The system integrates:
 
-- Data ingestion  
-- Text preprocessing & chunking  
-- Embedding generation  
-- Vector search (FAISS)  
-- Retrieval-Augmented Generation (RAG)  
-
----
-
-## 🚀 Project Overview
-
-Large Language Models (LLMs) struggle with long-context documents and external knowledge integration.  
-This project implements a **RAG pipeline** over YouTube transcripts to provide accurate, context-aware answers.
-
-The system workflow:
-
-1. Extracts transcripts from YouTube
-2. Cleans and preprocesses text
-3. Splits text into semantic chunks
-4. Generates embeddings
-5. Stores embeddings in FAISS vector store
-6. Retrieves relevant chunks
-7. Uses Gemini to generate context-aware answers
+- Transcript ingestion
+- Semantic chunking
+- Vector embedding
+- FAISS indexing
+- Retrieval-based context injection
+- Grounded response generation using Google Gemini
 
 ---
 
-## 🏗️ Project Structure
+## 🚀 Project Motivation
 
-```
-youtube-rag-gemini/
-│
-├── notebooks/
-│   ├── 01_data_ingestion.ipynb
-│   ├── 02_chunking_analysis.ipynb
-│   ├── 03_embedding_retrieval.ipynb
-│   └── 04_rag_pipeline.ipynb
-│
-├── data/
-│   └── transcripts/
-│
-├── main.py
-├── requirements.txt
-├── .env
-└── README.md
-```
+Large Language Models (LLMs) struggle with long documents due to context window limitations and hallucination risks.
+
+NeuralTranscript addresses this by:
+
+- Converting transcripts into dense vector embeddings
+- Performing similarity-based retrieval
+- Injecting only relevant context into the LLM
+- Generating grounded and reliable answers
 
 ---
 
-## 🧠 System Architecture
+## 🏗️ System Architecture
 
 ```
 YouTube Video
       ↓
 Transcript Extraction
       ↓
-Text Cleaning
-      ↓
-Chunking
+Semantic Chunking
       ↓
 Embedding Generation
       ↓
-FAISS Vector Store
+FAISS Vector Index
       ↓
-Retriever
+Retriever (Top-k Search)
+      ↓
+Context Injection
       ↓
 Gemini LLM
       ↓
@@ -75,18 +51,43 @@ Final Answer
 
 ---
 
-## 🛠️ Tech Stack
+## 📂 Project Structure
 
-- Python 3.10+
-- Google Gemini API
-- LangChain
-- FAISS (Vector Database)
-- youtube-transcript-api
-- python-dotenv
-- uv (package manager)
+```
+NeuralTranscript/
+│
+├── notebooks/
+│   ├── 01_data_ingestion.ipynb
+│   ├── 02_semantic_chunking.ipynb
+│   ├── 03_vector_indexing.ipynb
+│   └── 04_rag_query_engine.ipynb
+│
+├── data/
+│   └── transcripts/
+│   └── chunked_docs.pkl
+│   └── faiss_index/
+│   └── index.faiss
+│   └── index.pkl
+│
+├
+├── main.py
+├── requirements.txt
+└── README.md
+```
 
 ---
 
+## 🛠️ Tech Stack
+
+- Python 3.10+
+- LangChain
+- FAISS
+- Google Gemini API
+- youtube-transcript-api
+- python-dotenv
+- uv
+
+---
 
 ## 🧪 Example Usage
 
@@ -104,65 +105,57 @@ The video explains ...
 
 ---
 
-## 📊 Key Features
+## ▶️ Running the Full Pipeline
 
-- Modular RAG pipeline
-- Error-handled transcript ingestion
-- Persistent transcript storage
-- Semantic text chunking
-- Vector similarity search
-- Context-aware Gemini responses
-- Reproducible project structure
+### 1️⃣ Install Dependencies
 
----
-
-## 🔐 Security Notes
-
-- `.env` is excluded from version control
-- API keys are never stored in source code
-- Vector stores are not committed to GitHub
+```bash
+uv venv
+.venv\Scripts\activate
+uv pip install -r requirements.txt
+```
 
 ---
 
-## 📌 Future Improvements
+### 2️⃣ Add Gemini API Key
 
-- Add Streamlit web interface
-- Add RAG evaluation metrics
-- Support multiple videos
-- Hybrid retrieval (BM25 + embeddings)
-- Convert into REST API
-- Extend to Agentic RAG system
+Create `.env` file:
+
+```
+GEMINI_API_KEY=your_api_key_here
+```
 
 ---
 
-## 🎓 Academic Value
+### 3️⃣ Run Application
 
-This project demonstrates practical understanding of:
+```bash
+python main.py
+```
+
+---
+
+## 🎓 Academic Contribution
+
+This project demonstrates applied expertise in:
 
 - Retrieval-Augmented Generation (RAG)
-- Vector databases
-- Embedding models
+- Vector databases and semantic search
+- Embedding-based knowledge indexing
 - Prompt engineering
-- LLM integration
-- Modular pipeline design
-
-It can be extended into research on:
-- Agentic AI systems  
-- Educational assistants  
-- Multimodal RAG  
-- Domain-specific knowledge systems  
+- Grounded LLM response generation
 
 ---
 
 ## 👤 Author
 
-**Inam Ullah Khan**  
+Engr. Inam Ullah Khan  
 MSc Data Science  
 Al-Farabi Kazakh National University  
 
 Research Interests:
-- Retrieval-Augmented Generation
 - Agentic AI Systems
+- Retrieval-Augmented Generation
 - Generative AI
 - Applied NLP
 
